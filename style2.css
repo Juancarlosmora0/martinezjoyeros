@@ -1,0 +1,203 @@
+/* =========================
+   BASE + VARIABLES
+   ========================= */
+:root{
+  --crema:#F6F0E7;
+  --dorado:#C8A462;
+  --negro:#1F1E1C;
+  --blanco:#FFFFFF;
+  --texto:#2b2b2b;
+  --texto-suave:#444;
+  --muted:#666;
+  --borde:rgba(0,0,0,.08);
+  --borde-strong:rgba(0,0,0,.14);
+  --sombra:0 8px 24px rgba(0,0,0,.08);
+  --sombra-elev:0 14px 30px rgba(0,0,0,.10);
+
+  /* Tipografía fluida */
+  --fs-100: clamp(.85rem, .74rem + .3vw, .95rem);
+  --fs-200: clamp(.95rem, .86rem + .35vw, 1.05rem);
+  --fs-300: clamp(1.05rem, .95rem + .4vw, 1.15rem);
+  --fs-400: clamp(1.2rem, 1.05rem + .6vw, 1.35rem);
+  --fs-hero: clamp(26px, 2.4vw, 36px);
+
+  /* Espaciado */
+  --sp-1: 6px;
+  --sp-2: 10px;
+  --sp-3: 14px;
+  --sp-4: 18px;
+  --sp-5: 24px;
+
+  /* Foco accesible */
+  --focus: 3px solid rgba(200,164,98,.55);
+  --focus-offset: 2px;
+
+  /* Radio */
+  --radius-8: 8px;
+  --radius-10: 10px;
+  --radius-12: 12px;
+  --radius-14: 14px;
+}
+
+/* Reseteos suaves */
+*{ box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  margin:0;
+  font-family: Montserrat, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: var(--fs-200);
+  color:var(--texto);
+  background:var(--blanco);
+  line-height:1.55;
+  -webkit-text-size-adjust:100%;
+  text-rendering:optimizeLegibility;
+}
+
+/* Utilidades */
+.visually-hidden,.sr-only{
+  position:absolute!important;width:1px;height:1px;clip:rect(1px,1px,1px,1px);
+  overflow:hidden;white-space:nowrap;clip-path:inset(50%);margin:-1px;padding:0;border:0;
+}
+.no-wrap{ white-space:nowrap; }
+.container{ max-width:1100px; margin:0 auto; padding:var(--sp-4); }
+.container-narrow{ max-width:880px; margin:0 auto; padding:var(--sp-4); }
+
+/* =========================
+   HEADER SIMPLE (sticky)
+   ========================= */
+header.top{
+  position:sticky; top:0; z-index:5;
+  background:var(--blanco);
+  border-bottom:1px solid var(--borde);
+  backdrop-filter:saturate(130%) blur(4px);
+}
+.header-wrap{
+  display:flex; justify-content:space-between; align-items:center; gap:12px;
+  padding:14px 18px; max-width:1100px; margin:0 auto;
+}
+.brand a{
+  font-family:"Playfair Display",serif; font-weight:600; letter-spacing:.2px;
+  color:var(--negro); text-decoration:none; font-size:1.2rem;
+}
+.nav a{
+  color:var(--texto-suave); text-decoration:none; margin-left:14px;
+  padding:6px 8px; border-radius:8px;
+}
+.nav a:hover{ color:var(--negro); background:rgba(0,0,0,.035); }
+.nav a:focus-visible{ outline:var(--focus); outline-offset:var(--focus-offset); }
+
+/* =========================
+   MIGAS
+   ========================= */
+.breadcrumbs{
+  font-size:.92rem; margin:14px 0; color:var(--muted);
+}
+.breadcrumbs a{ color:var(--muted); text-decoration:none; }
+.breadcrumbs a:hover{ color:var(--negro); }
+.breadcrumbs a:focus-visible{ outline:var(--focus); outline-offset:var(--focus-offset); }
+
+/* =========================
+   HERO CATEGORÍA
+   ========================= */
+.hero-cat{
+  display:grid; grid-template-columns:1.2fr 1fr; gap:16px; align-items:center; margin-top:22px;
+}
+.hero-cat h1{
+  font-family:"Playfair Display",serif; font-weight:600; margin:0 0 8px;
+  font-size:var(--fs-hero); color:var(--negro);
+}
+.hero-cat p.sub{ margin:0; color:#555; font-size:var(--fs-200); max-width:60ch; }
+.hero-cat .hero-media{
+  border:1px solid var(--borde); border-radius:var(--radius-14);
+  overflow:hidden; box-shadow:var(--sombra); background:var(--crema);
+}
+.hero-cat img{
+  width:100%; display:block; aspect-ratio:4/3; object-fit:cover; background:var(--crema);
+}
+@media (max-width:920px){ .hero-cat{ grid-template-columns:1fr; } }
+
+/* =========================
+   CONTROLES / FILTROS
+   ========================= */
+.controls{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center; margin:16px 0;
+}
+select, .btn{
+  font: inherit;
+  padding:10px 12px; border:1px solid var(--borde); border-radius:var(--radius-10);
+  background:#fff; cursor:pointer; min-height:40px;
+  transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease, background .15s ease;
+}
+select:focus-visible, .btn:focus-visible{ outline:var(--focus); outline-offset:var(--focus-offset); }
+.btn-prim{
+  background:var(--negro); color:#fff; border-color:var(--negro);
+  box-shadow:0 2px 8px rgba(0,0,0,.08);
+}
+.btn-prim:hover{ opacity:.92; transform:translateY(-1px); }
+.small{ font-size:.92rem; color:var(--muted); }
+
+/* =========================
+   GRID PRODUCTOS
+   ========================= */
+.grid{
+  display:grid; grid-template-columns:repeat(3,1fr); gap:14px; align-items:stretch;
+}
+@media (max-width:920px){ .grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:620px){ .grid{ grid-template-columns:1fr; } }
+
+.card{
+  border:1px solid var(--borde); border-radius:var(--radius-14); overflow:hidden;
+  background:#fff; box-shadow:var(--sombra); display:flex; flex-direction:column;
+  transition: transform .2s ease, box-shadow .2s ease;
+  will-change: transform;
+}
+.card:hover{ transform: translateY(-4px); box-shadow: var(--sombra-elev); }
+.card:focus-within{ box-shadow:0 0 0 3px rgba(200,164,98,.35), var(--sombra-elev); }
+
+.card img{
+  width:100%; aspect-ratio:4/3; object-fit:cover; background:var(--crema); display:block;
+}
+.card .info{
+  padding:12px 14px; display:grid; gap:6px;
+}
+.card .title{
+  font-weight:600; color:var(--negro); font-size:var(--fs-300);
+  display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;
+}
+.card .price{ color:#111; font-size:var(--fs-200); }
+.badge{
+  display:inline-block; padding:2px 8px; border-radius:999px;
+  background:rgba(200,164,98,.14); border:1px solid rgba(200,164,98,.45);
+  color:#6a5527; font-size:.82rem;
+}
+.card .actions{ margin-top:4px; display:flex; gap:8px; }
+
+/* =========================
+   FOOTER
+   ========================= */
+.footer{
+  border-top:1px solid var(--borde); padding:18px; color:var(--muted);
+  text-align:center; margin-top:28px; font-size:var(--fs-100);
+}
+
+/* =========================
+   HIGHLIGHT / ANCLAS
+   ========================= */
+.highlight{
+  box-shadow:0 0 0 4px rgba(200,164,98,.25) inset;
+  transition:box-shadow .6s ease;
+}
+
+/* =========================
+   ACCESIBILIDAD / MOVIMIENTO
+   ========================= */
+@media (prefers-reduced-motion:reduce){
+  *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  .card, .btn, .btn-prim{ transform:none !important; }
+}
+
+/* =========================
+   ESTADOS DE FOCO (fallback)
+   ========================= */
+:focus{ outline: none; }
+:focus-visible{ outline: var(--focus); outline-offset: var(--focus-offset); }
