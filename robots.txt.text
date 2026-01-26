@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Cambia la URL de abajo por tu dirección real de Netlify cuando subas la web:
+Sitemap: https://TU-DOMINIO-OFICIAL/sitemap.xml

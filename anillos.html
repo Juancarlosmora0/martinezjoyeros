@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F0E7">
+
+  <!-- MODIFICACIÓN 1: Meta-datos actualizados para marketing BF -->
+  <title>Colección: Anillos | Martínez Joyeros</title>
+  <meta name="description" content="Colección de anillos Vidal Vidal con -20% Dto. por Black Friday. Diseño minimalista y tradición en Martínez Joyeros, Alcalá de Henares.">
+  <link rel="canonical" href="https://regal-biscuit-fb8c3e.netlify.app/anillos.html">
+
+  <meta property="og:title" content="Black Friday: Anillos | Martínez Joyeros">
+  <meta property="og:description" content="¡-20% Dto! Anillos de la colección Vidal Vidal con elegancia atemporal.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://regal-biscuit-fb8c3e.netlify.app/anillos.html">
+  <meta property="og:image" content="https://regal-biscuit-fb8c3e.netlify.app/imagenes/anillos-og.jpg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Black Friday: Anillos | Martínez Joyeros">
+  <meta name="twitter:description" content="¡-20% Dto! Anillos de la colección Vidal Vidal con elegancia atemporal.">
+  <meta name="twitter:image" content="https://regal-biscuit-fb8c3e.netlify.app/imagenes/anillos-og.jpg">
+  <!-- Fin de Modificación 1 -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- ESTILOS DEL MENÚ HAMBURGUESA INTEGRADOS -->
+  <style>
+    /* Cabecera Principal */
+    .main-header {
+      background-color: #F6F0E7; 
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      z-index: 1000;
+    }
+
+    .logo a {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1a1a1a;
+      text-decoration: none;
+      letter-spacing: 0.5px;
+    }
+
+    /* Navegación Desktop */
+    .nav-menu ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-menu a {
+      font-family: 'Montserrat', sans-serif;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .nav-menu a:hover {
+      color: #b08d55;
+    }
+
+    /* Botón Hamburguesa (Oculto por defecto) */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 5px;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 25px;
+      height: 2px;
+      background-color: #333;
+      transition: all 0.3s ease;
+    }
+
+    /* Estilos Responsive (Móvil) */
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        display: none; /* Oculto por defecto en móvil */
+        z-index: 999;
+      }
+
+      .nav-menu.active {
+        display: flex;
+      }
+
+      .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+      }
+      
+      .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+      .nav-toggle.active span:nth-child(2) { opacity: 0; }
+      .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NUEVO HEADER CON MENÚ HAMBURGUESA ===== -->
+<header class="main-header">
+  <div class="logo">
+    <a href="index.html">Martínez Joyeros</a>
+  </div>
+  
+  <!-- Botón siempre visible en productos -->
+  <button class="nav-toggle always-visible" aria-label="Abrir menú">
+    <span></span><span></span><span></span>
+  </button>
+
+  <div class="nav-overlay"></div>
+
+  <nav class="sidebar-menu">
+    <div class="nav-mobile-header">
+      <span class="nav-mobile-title">Menú</span>
+      <button class="nav-close-btn">&times;</button>
+    </div>
+
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="anillos.html">Anillos</a></li>
+      <li><a href="pendientes.html">Pendientes</a></li>
+      <li><a href="collares.html">Collares</a></li>
+      <li><a href="pulseras.html">Pulseras</a></li>
+      <li><a href="relojes.html">Relojes</a></li>
+      
+      <li style="margin-top: 15px; border-top: 1px solid #f5f5f5;">
+        <a href="index.html#contacto" style="color: #333;">📍 Contacto y Tienda</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
+<!-- MODIFICACIÓN 2: Hero de Marketing Black Friday -->
+<section class="category-hero bf-category-hero" id="catalogo-bf" aria-labelledby="cat-title">
+  <div class="cat-hero-inner">
+    <h1 id="cat-title" class="cat-title">Colecciónes: Anillos</h1>
+    <p class="cat-sub">Todas las colecciones de <strong>Vidal Vidal</strong></p>
+    <a href="index.html#categorias" class="cat-cta">&larr; Volver a categorías</a>
+  </div>
+  
+  <svg class="cat-wave" viewBox="0 0 1440 80" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+    <path d="M1440 23.3c-100.5 13.5-212 31.8-335 39.7-124 7.8-265 2-402-14.7-137-16.7-289-40.3-488-51.8v83.5h1225z" fill="rgba(0,0,0,.04)"></path>
+  </svg>
+</section>
+
+<!-- 📦 Catálogo de Anillos -->
+<section class="catalogo-section">
+  <div class="catalogo-grid">
+
+    <!-- Big Drop -->
+    <article class="producto-card">
+     
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20Big%20Drop.JPG" alt="Anillo Big Drop" loading="lazy">
+      <h3 class="producto-nombre">Anillo Big Drop</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Big%20Drop.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+    </article>
+
+    <!-- Salina -->
+    <article class="producto-card">
+      
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20Salina.JPG" alt="Anillo Salina" loading="lazy">
+      <h3 class="producto-nombre">Anillo Salina</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Salina.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+    </article>
+
+    <!-- Tira Circonitas Lisa -->
+    <article class="producto-card">
+      
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20Tira%20Circonitas%20Lisa.JPG" alt="Anillo Tira Circonitas Lisa" loading="lazy">
+      <h3 class="producto-nombre">Anillo Tira Circonitas Lisa</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Tira%20Circonitas%20Lisa.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+    </article>
+
+    <!-- Volumen Textura Dual -->
+    <article class="producto-card">
+      
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20Volumen%20Textura%20Dual.JPG" alt="Anillo Volumen Textura Dual" loading="lazy">
+      <h3 class="producto-nombre">Anillo Volumen Textura Dual</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Volumen%20Textura%20Dual.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+    </article>
+
+    <!-- Textura Curve Dorado -->
+    <article class="producto-card">
+      
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20textura%20Curve%20Dorado.JPG" alt="Anillo textura Curve Dorado" loading="lazy">
+      <h3 class="producto-nombre">Anillo textura Curve Dorado</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20textura%20Curve%20Dorado.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+    </article>
+
+    <!-- Textura Curve -->
+    <article class="producto-card">
+      
+      <img src="https://raw.githubusercontent.com/Juancarlosmora0/martinezjoyeros/main/imagenes/Anillo%20textura%20Curve.JPG" alt="Anillo textura Curve" loading="lazy">
+      <h3 class="producto-nombre">Anillo textura Curve</h3>
+      <div class="actions">
+        <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20textura%20Curve.%20%C2%BFPod%C3%A9is%20darme%20precio%20y%20tallas%3F" target="_blank" rel="noopener">Consultar</a>
+        <a class="btn" href="index.html#contacto">Ver en tienda</a>
+      </div>
+      
+    </article>
+          <article class="producto-card">
+        <img src="imagenes/ANILLO LISO LUCENT DE CIRCONITAS.WEBP" alt="Anillo Lucent Circonitas" loading="lazy">
+        <h3 class="producto-nombre">Anillo Liso Lucent de Circonitas</h3>
+        <div class="actions">
+          <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Liso%20Lucent%20de%20Circonitas.%20%C2%BFPod%C3%A9is%20darme%20precio%3F" target="_blank" rel="noopener">Consultar</a>
+          <a class="btn" href="index.html#contacto">Ver en tienda</a>
+        </div>
+      </article>
+
+      <article class="producto-card">
+        <img src="imagenes/ANILLO THELMA CHAPADO ORO 18 KT DOBLE TIRA LISA Y CIRCONITAS.WEBP" alt="Anillo Thelma Chapado Oro 18KT" loading="lazy">
+        <h3 class="producto-nombre">Anillo Thelma Chapado Oro 18 KT</h3>
+        <div class="actions">
+          <a class="btn-visit" href="https://wa.me/34678417026?text=Hola%20Mart%C3%ADnez%20Joyeros%2C%20me%20interesa%20el%20Anillo%20Thelma%20Chapado%20Oro%2018%20KT.%20%C2%BFPod%C3%A9is%20darme%20precio%3F" target="_blank" rel="noopener">Consultar</a>
+          <a class="btn" href="index.html#contacto">Ver en tienda</a>
+        </div>
+      </article>
+
+
+  </div>
+</section>
+
+<!-- ===== SECCIÓN CTA FINAL: VISITA A TIENDA ===== -->
+<section class="store-cta">
+  <div class="store-cta-content">
+    <h2>¿Buscas una pieza exclusiva?</h2>
+    <p>
+      Nuestra web es solo una pequeña muestra. 
+      Ven a nuestra joyería en <strong>Alcalá de Henares</strong> para descubrir colecciones únicas y recibir asesoramiento de expertos.
+    </p>
+    <a href="https://www.google.com/maps/search/?api=1&query=C.+Marqu%C3%A9s+Alonso+Mart%C3%ADnez,+5,+28805+Alcal%C3%A1+de+Henares,+Madrid" target="_blank" class="btn-mapa">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Ver ubicación en Mapa
+    </a>
+  </div>
+</section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    © <span id="year"></span> · Martínez Joyeros
+    <span class="sep">|</span>
+    <a href="aviso-legal.html">Aviso legal</a>
+    <span class="sep">·</span>
+    <a href="privacidad.html">Privacidad</a>
+    <span class="sep">·</span>
+    <a href="cookies.html">Cookies</a>
+  </footer>
+
+<script>
+  // Actualiza el año del footer automáticamente
+  document.getElementById('year').textContent = new Date().getFullYear();
+  
+  // Lógica del Menú Lateral
+  const navToggle = document.querySelector('.nav-toggle');
+  const navClose = document.querySelector('.nav-close-btn');
+  const sideMenu = document.querySelector('.sidebar-menu');
+  const overlay = document.querySelector('.nav-overlay');
+
+  function toggleMenu() {
+    if(sideMenu) sideMenu.classList.toggle('active');
+    if(overlay) overlay.classList.toggle('active');
+  }
+
+  // Eventos para abrir y cerrar
+  if (navToggle) navToggle.addEventListener('click', toggleMenu);
+  if (navClose) navClose.addEventListener('click', toggleMenu);
+  if (overlay) overlay.addEventListener('click', toggleMenu);
+</script>
+
+
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"Anillos en Black Friday",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"url":"https://regal-biscuit-fb8c3e.netlify.app/anillos.html#1"},
+      {"@type":"ListItem","position":2,"url":"https://regal-biscuit-fb8c3e.netlify.app/anillos.html#2"},
+      {"@type":"ListItem","position":3,"url":"https://regal-biscuit-fb8c3e.netlify.app/anillos.html#3"},
+      {"@type":"ListItem","position":4,"url":"https://regal-biscuit-fb8c3e.netlify.app/anillos.html#4"}
+    ]
+  }
+  </script>
+</body>
+</html>
